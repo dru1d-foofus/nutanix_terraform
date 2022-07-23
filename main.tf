@@ -37,6 +37,8 @@ data "template_file" "cloud" {
     vm_dns2       = var.vm_dns2
     vm_public_key = var.vm_public_key
     vm_name       = var.vm_name
+    vm_ip         = var.vm_ip
+    vm_gateway    = var.vm_gateway
   }
 }
 
