@@ -1,0 +1,28 @@
+#cloud-config
+cloud_config_modules: 
+  - resolv_conf
+  - runcmd
+hostname: ${vm_name}
+write_files:
+  - content: |
+      network:
+        version: 2
+        ethernets:
+          ens3:
+            addresses: [ ${vm_ip}/26 ]
+            gateway4: ${vm_gateway}
+            nameservers:
+              addresses: 
+                - ${vm_dns1}
+                - ${vm_dns2}
+    path: /etc/netplan/01-netcfg.yaml
+users:
+  - name: ${vm_user}
+    ssh-authorized-keys:
+      - ${vm_public_key}
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+manage_etc_hosts: true
+runcmd: 
+  - netplan apply

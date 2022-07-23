@@ -1,0 +1,16 @@
+cluster_name = "__CLUSTER__"
+subnet_name  = "__VLAN__"
+image_name   = "__IMAGE__"
+user         = "__NUTANIX_USER__"
+password     = "__NUTANIX_PASSWORD__"
+endpoint     = "__NUTANIX_ENDPOINT__"
+
+# nutanix vm cuustomization
+vm_name       = "__VM_NAME__"
+vm_dns1       = "8.8.8.8"
+vm_dns2       = "8.8.4.4"
+vm_user       = "__VM_USER__"
+vm_password   = "__VM_PASSWORD__"
+vm_public_key = "__SSH_KEY__"
+vm_ip         = "__VM_IP__"
+vm_gateway    = "__VM_GATEWAY__"
